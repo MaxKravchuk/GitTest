@@ -7,10 +7,11 @@ const products = [
 ];
 
 function ProductsList() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
   const handleAddToCart = (product) => {
     setCart([...cart, product]);
+    localStorage.setItem("cart", JSON.stringify([...cart, product]));
   };
 
   return (
