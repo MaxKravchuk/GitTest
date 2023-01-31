@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 const products = [
   { id: 1, name: "Product 1", description: "This is product 1" },
@@ -27,6 +28,7 @@ function ProductsList() {
           </li>
         ))}
       </ul>
+      <Link to="/cart">To cart</Link>
     </div>
   );
 }
